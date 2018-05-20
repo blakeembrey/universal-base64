@@ -1,0 +1,70 @@
+{
+  "name": "universal-base64",
+  "version": "0.0.0",
+  "description": "Small universal base64 functions for node.js and browsers",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "browser": "dist/browser.js",
+  "scripts": {
+    "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
+    "build": "rm -rf dist/ && tsc",
+    "specs": "jest --coverage",
+    "test": "npm run lint && npm run build && npm run specs && npm run bundle && npm run bundle:size",
+    "bundle": "browserify . -o browser.js",
+    "bundle:size": "wc -c < browser.js",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blakeembrey/universal-base64.git"
+  },
+  "keywords": [
+    "base64",
+    "atob",
+    "bota",
+    "universal",
+    "node",
+    "browser"
+  ],
+  "author": {
+    "name": "Blake Embrey",
+    "email": "hello@blakeembrey.com",
+    "url": "http://blakeembrey.me"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/blakeembrey/universal-base64/issues"
+  },
+  "homepage": "https://github.com/blakeembrey/universal-base64",
+  "jest": {
+    "roots": [
+      "<rootDir>/src/"
+    ],
+    "transform": {
+      "\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.2",
+    "@types/node": "^10.1.2",
+    "browserify": "^16.1.1",
+    "jest": "^22.4.3",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^22.4.2",
+    "tslint": "^5.9.1",
+    "tslint-config-standard": "^7.0.0",
+    "typescript": "^2.8.1"
+  }
+}
