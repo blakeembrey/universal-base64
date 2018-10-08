@@ -18,10 +18,10 @@ npm install universal-base64 --save
 ## Usage
 
 ```js
-import { atob, btoa } from 'universal-base64'
+import { decode, encode } from 'universal-base64'
 
-btoa('test') //=> "dGVzdA=="
-atob('dGVzdA==') //=> "test"
+encode('test') //=> "dGVzdA=="
+decode('dGVzdA==') //=> "test"
 ```
 
 ## TypeScript
