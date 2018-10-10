@@ -1,2 +1,2 @@
-export const decode = window.atob
-export const encode = window.btoa
+export const decode = window.atob.bind(window)
+export const encode = window.btoa.bind(window)
